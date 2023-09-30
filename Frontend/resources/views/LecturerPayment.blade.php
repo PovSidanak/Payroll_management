@@ -18,6 +18,7 @@
        <!--Table add STYLES-->
     <link href="css/Lecturer/style_t.css" rel="stylesheet" />
 
+
 </head>
 <body>
     <div id="dashboardMainContainer">
@@ -31,16 +32,13 @@
                 <ul class="dashboard_menu_lists">
                     <ul class="dashboard_menu_lists">
                         <li>
-                            <a href="Admindashboard.html"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
+                            <a href="{{url('Admindashboard')}}"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
                         </li>
                         <li>
-                            <a><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
+                            <a href="{{url('Employee')}}"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
                         </li>
                         <li class="menuActive">
-                            <a href="LecturerPayment.html"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fa fa-sticky-note-o"></i>&nbsp;&nbsp;<span class="menuText">System Reporting</span></a>
+                            <a href="{{url('LecturerPayment')}}"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
                         </li>
                     </ul>
             </div>
@@ -61,11 +59,11 @@
                                                     </h1>
                                                     <nav>
                                                         <div class="section__container nav__links"><p>
-                                                        <span><a href="http://127.0.0.1:5173/" style="color: #2bff00;">Lectures payment</a></span>
+                                                        <span><a href="{{url('LecturerPayment')}}" style="color: #2bff00;">Lectures payment</a></span>
                                                         <span><a>/</a></span>
-                                                        <span><a href="http://127.0.0.1:5173/Payroll">Monthly Payroll</a></span>
+                                                        <span><a href="{{url('Payroll')}}">Monthly Payroll</a></span>
                                                         <span><a>/</a></span>
-                                                        <span><a href="http://127.0.0.1:5173/History_payroll">View Payroll history</a></span>
+                                                        <span><a href="{{url('History_payroll')}}">View Payroll history</a></span>
                                                         </div>
                                                     </nav>
 
@@ -180,8 +178,8 @@
                                                                             <th>No</th>
                                                                             <th>Lecturer Name</th>
                                                                             <th>Course</th>
-                                                                            <th>Hour wage</th>
                                                                             <th>Main Salary</th>
+                                                                            <th>Hour wage</th>
                                                                             <th>Start Date</th>
                                                                             <th>Action</th>
                                                                         </tr>
@@ -189,75 +187,19 @@
 
 
                                                                     <tbody class="userInfo">
-                                                                        <!-- <tr><td class="empty" colspan="11" align="center">No data available in table</td></tr> -->
-                                                                        <!-- <tr>
-                                                                            <td>1</td>
-                                                                            <td><img src="./img/pic1.png" alt="" width="40" height="40"></td>
-                                                                            <td>John Doe</td>
-                                                                            <td>30</td>
-                                                                            <td>New York</td>
-                                                                            <td>Front-End Developer</td>
-                                                                            <td>$25000</td>
-                                                                            <td>03-08-2010</td>
-                                                                            <td>jhondoe.net111@gmail.com</td>
-                                                                            <td>924157812</td>
-                                                                            <td>
-                                                                                <button><i class="fa-regular fa-eye"></i></button>
-                                                                                <button><i class="fa-regular fa-pen-to-square"></i></button>
-                                                                                <button><i class="fa-regular fa-trash-can"></i></button>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td><img src="./img/pic1.png" alt="" width="40" height="40"></td>
-                                                                            <td>John Doe</td>
-                                                                            <td>30</td>
-                                                                            <td>New York</td>
-                                                                            <td>Front-End Developer</td>
-                                                                            <td>$25000</td>
-                                                                            <td>03-08-2010</td>
-                                                                            <td>jhondoe.net111@gmail.com</td>
-                                                                            <td>924157812</td>
-                                                                            <td>
-                                                                                <button><i class="fa-regular fa-eye"></i></button>
-                                                                                <button><i class="fa-regular fa-pen-to-square"></i></button>
-                                                                                <button><i class="fa-regular fa-trash-can"></i></button>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td><img src="./img/pic1.png" alt="" width="40" height="40"></td>
-                                                                            <td>John Doe</td>
-                                                                            <td>30</td>
-                                                                            <td>New York</td>
-                                                                            <td>Front-End Developer</td>
-                                                                            <td>$25000</td>
-                                                                            <td>03-08-2010</td>
-                                                                            <td>jhondoe.net111@gmail.com</td>
-                                                                            <td>924157812</td>
-                                                                            <td>
-                                                                                <button><i class="fa-regular fa-eye"></i></button>
-                                                                                <button><i class="fa-regular fa-pen-to-square"></i></button>
-                                                                                <button><i class="fa-regular fa-trash-can"></i></button>
-                                                                            </td>
-                                                                        </tr>
-                                                                        <tr>
-                                                                            <td>1</td>
-                                                                            <td><img src="./img/pic1.png" alt="" width="40" height="40"></td>
-                                                                            <td>John Doe</td>
-                                                                            <td>30</td>
-                                                                            <td>New York</td>
-                                                                            <td>Front-End Developer</td>
-                                                                            <td>$25000</td>
-                                                                            <td>03-08-2010</td>
-                                                                            <td>jhondoe.net111@gmail.com</td>
-                                                                            <td>924157812</td>
-                                                                            <td>
-                                                                                <button><i class="fa-regular fa-eye"></i></button>
-                                                                                <button><i class="fa-regular fa-pen-to-square"></i></button>
-                                                                                <button><i class="fa-regular fa-trash-can"></i></button>
-                                                                            </td>
-                                                                        </tr> -->
+                                                                        <td>1</td>
+                                                                        <td>Tal Tongsreng</td>
+                                                                        <td>Software Engineering</td>
+                                                                        <td>$250</td>
+                                                                        <td>$9</td>
+                                                                        <td>2023-20-02</td>
+                                                                        <td>
+                                                                            <!--  <button class="btn btn-primary newUser" data-bs-toggle="modal" data-bs-target="#userForm">New User <i class="bi bi-people"> -->
+                                                                            <button class="btn btn-primary newUser">View</button>
+                                                                            <button class="btn btn-primary" >Edit</button>
+                                                                            <button class="btn btn-danger" >Delete</button>
+                                                                        </td>
+
                                                                     </tbody>
 
                                                                 </table>

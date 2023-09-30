@@ -38,16 +38,13 @@
                 <ul class="dashboard_menu_lists">
                     <ul class="dashboard_menu_lists">
                         <li>
-                            <a href="Admindashboard.html"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
+                            <a href="{{url('Admindashboard')}}"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
+                            <a href="{{url('Employee')}}"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
                         </li>
                         <li class="menuActive">
-                            <a href="http://127.0.0.1:5173/"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fa fa-sticky-note-o"></i>&nbsp;&nbsp;<span class="menuText">System Reporting</span></a>
+                            <a href="{{url('LecturerPayment')}}"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
                         </li>
                     </ul>
             </div>
@@ -68,7 +65,7 @@
                                                     </h1>
                                                     <nav>
                                                         <div class="section__container nav__links"><p>
-                                                        <span><a href="http://127.0.0.1:5173/">Lectures payment</a></span>
+                                                        <span><a href="">Lectures payment</a></span>
                                                         <span><a>/</a></span>
                                                         <span><a href="http://127.0.0.1:5173/Payroll" style="color: #2bff00;">Monthly Payroll</a></span>
                                                         <span><a>/</a></span>
@@ -148,7 +145,7 @@
                                                                     <thead>
                                                                         <tr class="text-dark">
 
-                                                                            
+
                                                                             <th scope="col">Name</th>
                                                                             <th scope="col">Course</th>
                                                                             <th scope="col">Main Salary</th>

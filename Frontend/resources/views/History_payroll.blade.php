@@ -37,16 +37,13 @@
                 <ul class="dashboard_menu_lists">
                     <ul class="dashboard_menu_lists">
                         <li>
-                            <a href="Admindashboard.html"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
+                            <a href="{{url('Admindashboard')}}"><i class="fa fa-reorder"></i>&nbsp;&nbsp;<span class="menuText">Dashboard</span></a>
                         </li>
                         <li>
-                            <a href=""><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
+                            <a href="{{url('Employee')}}"><i class="fa fa-user-plus"></i>&nbsp;&nbsp;<span class="menuText">Employees</span></a>
                         </li>
                         <li class="menuActive">
-                            <a href="LecturerPayment.html"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
-                        </li>
-                        <li>
-                            <a href=""><i class="fa fa-sticky-note-o"></i>&nbsp;&nbsp;<span class="menuText">System Reporting</span></a>
+                            <a href="{{url('LecturerPayment')}}"><i class="fa fa-dollar"></i>&nbsp;&nbsp;<span class="menuText">Lecturer Payment</span></a>
                         </li>
                     </ul>
             </div>

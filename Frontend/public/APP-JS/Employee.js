@@ -5,7 +5,19 @@ crossBtn = document.querySelector('.closeBtn'),
 submitBtn = document.querySelector('.submitBtn'),
  modalTitle = document.querySelector('.modalTitle'),
  popupFooter = document.querySelector('.popupFooter'),
+
  form = document.querySelector('form'),
+//  formInputFields = document.querySelectorAll('form input'),
+//   fName = document.getElementById("fName"),
+//   lName = document.getElementById("lName"),
+//   gender = document.getElementById("gender"),
+//   department = document.getElementById("department"),
+//   course = document.getElementById("course"),
+//   position = document.getElementById("position"),
+//   email = document.getElementById("email"),
+//   phone = document.getElementById("phone"),
+//   entries = document.querySelector(".showEntries"),
+//   tabSize = document.getElementById("table_size"),
   userInfo = document.querySelector(".userInfo"),
   table = document.querySelector("table"),
   filterData = document.getElementById("search")
@@ -118,14 +130,16 @@ function showInfo(){
                 let createElement = `<tr class = "employeeDetails">
                 <td>${i+1}</td>
                 <td>${staff.fName + " " + staff.lName}</td>
+                <td>${staff.genderVal}</td>
+                <td>${staff.departmentVal}</td>
                 <td>${staff.courseVal}</td>
-                <td>${staff.hourVal}</td>
-                <td>${staff.salaryVal}</td>
-                <td>${staff.sDateVal}</td>
+                <td>${staff.positionVal}</td>
+                <td>${staff.emailVal}</td>
+                <td>${staff.phoneVal}</td>
                 <td>
-                    <button class="btn btn-success" onclick="readInfo('${staff.fName}', '${staff.lName}', '${staff.courseVal}', '${staff.hourVal}', '${staff.salaryVal}', '${staff.sDateVal}')">View</button>
+                    <button class="btn btn-success" onclick="readInfo('${staff.fName}', '${staff.lName}', '${staff.genderVal}','${staff.departmentVal}','${staff.courseVal}','${staff.positionVal}', '${staff.emailVal}', '${staff.phoneVal}')">View</button>
 
-                    <button class="btn btn-primary" onclick="editInfo('${i}','${staff.fName}', '${staff.lName}', '${staff.courseVal}', '${staff.hourVal}', '${staff.salaryVal}', '${staff.sDateVal}')">Edit</button>
+                    <button class="btn btn-primary" onclick="editInfo('${i}','${staff.fName}', '${staff.lName}', '${staff.genderVal}','${staff.departmentVal}','${staff.courseVal}','${staff.positionVal}','${staff.emailVal}', '${staff.phoneVal}')">Edit</button>
 
 
                     <button class="btn btn-danger" onclick = "deleteInfo(${i})">Delete</button>
@@ -133,6 +147,7 @@ function showInfo(){
             </tr>`
 
                 userInfo.innerHTML += createElement
+                table.style.minWidth = "1400px"
             }
         }
     }
@@ -140,19 +155,22 @@ function showInfo(){
 
     else{
         userInfo.innerHTML = `<tr class="employeeDetails"><td class="empty" colspan="11" align="center">No data available in table</td></tr>`
+        table.style.minWidth = "1400px"
     }
 }
 
 showInfo()
 
 
-function readInfo(fname, lname, Course, Hour, Salary, SDate){
+function readInfo(fname, lname,Gender,Department,Course,Position, Email, Phone){
     fName.value = fname
     lName.value = lname
-    course.value = Course
-    hour.value = Hour
-    salary.value = Salary
-    sDate.value = SDate
+    gender.value = Gender
+    department.value = Department
+    course.value= Course
+    position.value = Position
+    email.value = Email
+    phone.value = Phone
 
     darkBg.classList.add('active')
     popupForm.classList.add('active')
@@ -166,7 +184,7 @@ function readInfo(fname, lname, Course, Hour, Salary, SDate){
     imgHolder.style.pointerEvents = "none"
 }
 
-function editInfo(id, fname, lname, Course, Hour, Salary, SDate){
+function editInfo(id, fname, lname,Gender,Department,Course,Position, Email, Phone){
     isEdit = true
     editId = id
 
@@ -178,18 +196,22 @@ function editInfo(id, fname, lname, Course, Hour, Salary, SDate){
         id: id,
         fName: fname,
         lName: lname,
-        courseVal: Course,
-        hourVal: Hour,
-        salaryVal: Salary,
-        sDateVal: SDate,
+        genderVal: Gender,
+        departmentVal: Department,
+        courseVal:Course,
+        positionVal: Position,
+        emailVal: Email,
+        phoneVal: Phone
     }
 
     fName.value = fname
     lName.value = lname
-    course.value = Course
-    hour.value = Hour
-    salary.value = Salary
-    sDate.value = SDate
+    gender.value = Gender
+    department.value = Department
+    course.value= Course
+    position.value = Position
+    email.value = Email
+    phone.value = Phone
 
 
     darkBg.classList.add('active')
@@ -206,7 +228,7 @@ function editInfo(id, fname, lname, Course, Hour, Salary, SDate){
 }
 
 function deleteInfo(index){
-    if(confirm("Are you sure want to delete?")){
+    if(confirm("Aer you sure want to delete?")){
         originalData.splice(index, 1);
         localStorage.setItem("userProfile", JSON.stringify(originalData));
 
@@ -253,10 +275,12 @@ form.addEventListener('submit', (e)=> {
         id: Date.now(),
         fName: fName.value,
         lName: lName.value,
-        courseVal: course.value,
-        hourVal: hour.value,
-        salaryVal: salary.value,
-        sDateVal: sDate.value,
+        genderVal: gender.value,
+        departmentVal:department.value,
+        courseVal:course.value,
+        positionVal: position.value,
+        emailVal: email.value,
+        phoneVal: phone.value
     }
 
     if(!isEdit){
@@ -372,11 +396,9 @@ filterData.addEventListener("input", ()=> {
 
         const filteredData = originalData.filter((item) => {
             const fullName = (item.fName + " " + item.lName).toLowerCase()
-            const course = item.courseVal.toLowerCase()
 
             return(
-                fullName.includes(searchTerm) ||
-                course.includes(searchTerm)
+                fullName.includes(searchTerm)
             )
         })
 

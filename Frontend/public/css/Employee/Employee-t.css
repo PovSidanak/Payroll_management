@@ -1,7 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito:wght@300&family=Poppins:wght@100;200;300;400&display=swap');
 
-
-
+font-style
 :root{
     --dark1: #0000004d;
     --dark2: #181c20;
@@ -16,18 +15,14 @@
 }
 
 
-body{
-    justify-content: center;
-}
 
-
-.container_t{
+.container{
     padding: 20px;
     background: white;
     border-radius: 10px;
 }
 
-.container_t header .filterEntries{
+.container header .filterEntries{
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -68,7 +63,7 @@ body{
     border-color: var(--dark7);
 }
 
-.container_t header .addMemberBtn {
+.container header .addMemberBtn {
     margin-bottom: 15px;
 }
 
@@ -91,7 +86,7 @@ header .addMemberBtn button, .popup header .closeBtn, .popup footer .submitBtn{
 }
 
 
-.container_t table{
+.container table{
     border-collapse: collapse;
     text-align: left;
 }
@@ -117,6 +112,9 @@ table tr th{
     padding: 12px 15px;
 }
 
+table tr td:nth-child(1), table tr td:nth-child(2){
+    text-align: center;
+}
 
 table tr td img{
     vertical-align: middle;
@@ -140,7 +138,7 @@ table tbody tr:nth-child(odd){
 
 
 table tr td{
-    font-size: 17px;
+    font-size: 15px;
 }
 
 table td button{
@@ -164,6 +162,7 @@ table td button{
     color: #fff;
     background-color: #0d6efd;
     border-color: #0d6efd;
+    margin-left: 10px;
 }
 .btn-danger {
     color: #fff;
@@ -171,7 +170,7 @@ table td button{
     border-color: #dc3545;
 }
 
-.container_t footer{
+.container footer{
     margin-top: 25px;
     font-size: 16px;
     display: flex;
@@ -179,7 +178,7 @@ table td button{
     align-items: center;
 }
 
-.container_t footer span{
+.container footer span{
     color: var(--dark8);
 }
 

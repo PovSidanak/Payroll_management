@@ -10,7 +10,13 @@ use GuzzLeHttp\Client;
 class UserController extends Controller
 {
     //
-   
+    public function Employee(){
+        return view('Employee');
+    }
+    public function Admindashboard(){
+        return view('Admindashboard');
+    }
+
     public function payroll(){
         return view('payroll');
     }
@@ -23,6 +29,10 @@ class UserController extends Controller
     public function History_payroll(){
         return view('History_payroll');
     }
+    public function addmember(){
+        return view('addmember');
+    }
+
 
 
 }

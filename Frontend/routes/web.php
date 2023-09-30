@@ -23,8 +23,9 @@ Route::get('/',[EmployeeController::class, 'homepage']);
 
 Route::get('/History_payroll',[UserController::class, 'History_payroll']);
 Route::get('/Payroll',[UserController::class, 'payroll']);
-
-Route::get('/Employee',[UserController::class, 'Employee']);
+Route::get('/addmember',[UserController::class, 'addmember']);
+Route::get('/Admindashboard',[UserController::class, 'Admindashboard']);
+Route::get('/Employee',[EmployeeController::class, 'employee_page']);
 Route::get('/PaymentHomepage',[UserController::class, 'PaymentHomepage']);
 Route::get('/History_payroll',[UserController::class, 'History_payroll']);
 Route::get('/LecturerPayment',[UserController::class, 'LecturerPayment']);
